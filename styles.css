@@ -1,0 +1,271 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins';
+  }
+  
+  header {
+    background-color: #9e2522;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 12px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    transition: top 0.3s;
+  }
+  
+  footer {
+    background-color: #9e2522;
+  }
+  
+  .button-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .logo-button-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+    padding: 12px 20px;
+    background-color: #9e2522;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  span {
+    font-size: 10px;
+  }
+  
+  .logo-button-column img {
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
+  }
+  
+  .logo-button-column {
+    background-color: #8f5b5a;
+  }
+  
+  .logo-button-column:hover {
+    background-color: #410b0a;
+  }
+  
+  .logo-button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    background-color: #f3c2c1;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .logo-button-column img {
+    width: 44px;
+    height: 44px;
+    object-fit: cover;
+  }
+  
+  .logo {
+    height: 40px;
+  }
+  
+  .nav-buttons {
+    display: flex;
+    gap: 20px;
+    padding-right: 10px;
+  }
+  
+  .sdfs {
+    position: relative;
+    z-index: 2;
+    color: white;
+  }
+  
+  .nav-buttons button {
+    padding: 8px 16px;
+    background-color: transparent;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .nav-buttons button:hover {
+    color: #0056b3;
+  }
+  
+  .burger {
+    font-size: 30px;
+    color: white;
+    display: none;
+    cursor: pointer;
+  }
+  
+  .side-panel {
+    position: fixed;
+    top: 0;
+    right: -290px;
+    width: 250px;
+    height: 100%;
+    background-color: #9e2522;
+    display: flex;
+    flex-direction: column;
+    padding: 100px 20px;
+    transition: right 0.3s ease;
+    z-index: 9;
+  }
+  
+  .side-panel button {
+    margin-bottom: 20px;
+    padding: 12px;
+    font-size: 16px;
+    background: none;
+    color: white;
+    border: none;
+    text-align: left;
+  }
+  
+  .side-panel button:hover {
+    color: #0056b3;
+  }
+  
+  .side-panel.open {
+    right: 0;
+  }
+  
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 8;
+    display: none;
+  }
+  
+  .overlay.show {
+    display: block;
+  }
+  
+  .content {
+    margin-top: 63px;
+    margin-right:1px
+  }
+  
+  .div-1 {
+    width: 100%;
+    height: 572px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    padding-left: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: start;
+  }
+  
+  .bg-video {
+    position: absolute;
+    top:358px;
+    left: 50%;
+    width: 100vw;
+    height: 590px;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+  
+  .div-1 h1 {
+    color: white;
+    font-size: 10vw;
+  }
+  
+  .div-1 h6 {
+    color: white;
+    font-size: 2vw;
+  }
+  
+  .gettarted {
+    color: rgb(255, 255, 255);
+    font-size: 2vw;
+    width: 14vw;
+    height: 6vw;
+    border-radius: 7vw;
+    border-width: 1vw;
+    border-color: rgb(120, 14, 14);
+    background-color: black;
+  }
+  
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .nav-buttons {
+      display: none;
+    }
+  
+    .burger {
+      display: block;
+    }
+  
+    .div-1 h1 {
+      font-size: 15vw;
+    }
+  
+    .div-1 h6 {
+      font-size: 5vw;
+    }
+  
+    .gettarted {
+      font-size: 3vw;
+      width: 24vw;
+      height: 10vw;
+    }
+  
+    .button-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    .logo-button-column {
+      font-size: 14px;
+      width: 100%;
+    }
+  
+    .logo-button-column img {
+      width: 30px;
+      height: 30px;
+    }
+  }
+  

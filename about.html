@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+  <link rel="icon" href="picture/favicon.png" type="image/png">
+  <title>Wontinola</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <img src="picture/log.png" alt="Logo" class="logo" />
+    <div class="nav-buttons">
+      <button onclick="window.location.href='index.html'">Home</button>
+      <button onclick="window.location.href='about.html'" style="text-decoration: underline;">About</button>
+      <button onclick="window.location.href='flavors.html'">Flavors</button>
+    </div>
+    <div class="burger" onclick="toggleMenu()">☰</div>
+  </header>
+
+  <div id="overlay" class="overlay" onclick="toggleMenu()"></div>
+
+  <div id="sidePanel" class="side-panel">
+    <button onclick="window.location.href='index.html'">Home</button>
+    <button onclick="window.location.href='about.html'"style="text-decoration: underline;">About</button>
+    <button onclick="window.location.href='flavors.html'">Flavors</button>
+  </div>
+
+  <div class="content">
+    <div class="div-1" style="background-color: rgb(23, 2, 2);">
+        <!-- <video autoplay muted loop playsinline class="bg-video">
+            <source src="picture/video.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+          </video>
+         -->
+          <div class="sdfs">
+            <h1>About Us</h1>
+          </div>
+        
+    </div>
+
+    
+
+  <script>
+    function toggleMenu() {
+      const panel = document.getElementById("sidePanel");
+      const overlay = document.getElementById("overlay");
+      panel.classList.toggle("open");
+      overlay.classList.toggle("show");
+      document.body.style.overflow = panel.classList.contains("open") ? "hidden" : "";
+    }
+
+    let lastScrollTop = 0;
+    const header = document.querySelector('header');
+
+    window.addEventListener('scroll', function() {
+      const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+      
+      if (currentScroll > lastScrollTop) {
+        header.style.top = "-70px";
+      } else {
+        header.style.top = "0";
+      }
+      
+      lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+    });
+  </script>
+</body>
+</html>
