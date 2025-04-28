@@ -100,13 +100,14 @@ span {
 .sdfs {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: flex-start; 
   z-index: 2;
   color: white;
   opacity: 0;
   transform: translateX(-50px);
   animation: fadeSlideIn 1.5s ease-out forwards;
 }
+
 
 .nav-buttons button {
   padding: 8px 16px;
@@ -203,13 +204,24 @@ span {
   padding-top: 100px;
   padding-bottom: 100px;
   padding-left: 10%;
+  place-items: center;
   grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
 }
-
 .soupss {
   padding:0px;
+  height: 32vw;
   animation: rotate 5s linear infinite;
+}
+.footer-1{
+  display: flex;
+  justify-content: center; 
+  align-items: center;                 
+  text-align: center; 
+  padding:20px;
+}
+.footer-1 p{
+  color: white;
+  font-size: 2vw;
 }
 
 @keyframes rotate {
@@ -229,7 +241,7 @@ span {
   height: 590px;
   object-fit: cover;
   transform: translate(-50%, -50%);
-  z-index: 1;
+  z-index: -2;
 }
 
 .div-1 h1 {
@@ -244,16 +256,22 @@ span {
 
 .gettarted {
   color: rgb(255, 255, 255);
-  font-size: 2vw;
+  font-size: 1.4vw;
   width: 14vw;
-  height: 6vw;
-  border-radius: 7vw;
-  border-style: solid;
-  border-width: 1vw;
-  border-color: #8d0a0a;
-  background-color: black;
+  height: 4vw;
+  border-radius: 80px;
+  border-color: #0057b300;
+  background-image: url('picture/button.png');
+  background-color: rgb(163, 22, 22);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  padding-left: 14px;
 }
-
+.gettarted:hover{
+  color: rgb(127, 22, 22);
+}
 @keyframes fadeIn {
   to {
     opacity: 1;
@@ -311,10 +329,13 @@ span {
   .div-2 {
     display: grid;
     padding-top: 100px;
+    place-items: center;
     padding-bottom: 100px;
     padding-left: 10%;
+    padding-right: 0px;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
+    height:500px;
   }
 
   .div-2h1 {
@@ -323,5 +344,8 @@ span {
 
   .div-2p {
     font-size: 2vw;
+  }
+  .sdfs{
+    align-items: center;
   }
 }

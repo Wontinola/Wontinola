@@ -3,16 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
   <link rel="icon" href="picture/favicon.png" type="image/png">
-  <title>Wontinola</title>
+  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="about.css" />
+  <title>Wontinola</title>
 </head>
 <body>
   <header>
     <img src="picture/log.png" alt="Logo" class="logo" />
     <div class="nav-buttons">
-      <button onclick="window.location.href='index.html'">Home</button>
+      <button onclick="window.location.href='index.html'" >Home</button>
       <button onclick="window.location.href='about.html'" style="text-decoration: underline;">About</button>
       <button onclick="window.location.href='flavors.html'">Flavors</button>
     </div>
@@ -22,25 +23,84 @@
   <div id="overlay" class="overlay" onclick="toggleMenu()"></div>
 
   <div id="sidePanel" class="side-panel">
-    <button onclick="window.location.href='index.html'">Home</button>
-    <button onclick="window.location.href='about.html'"style="text-decoration: underline;">About</button>
+    <button onclick="window.location.href='index.html'" >Home</button>
+    <button onclick="window.location.href='about.html'" style="text-decoration: underline;">About</button>
     <button onclick="window.location.href='flavors.html'">Flavors</button>
   </div>
 
-  <div class="content">
-    <div class="div-1" style="background-color: rgb(23, 2, 2);">
-        <!-- <video autoplay muted loop playsinline class="bg-video">
-            <source src="picture/video.mp4" type="video/mp4">
-            Your browser does not support HTML5 video.
-          </video>
-         -->
-          <div class="sdfs">
-            <h1>About Us</h1>
+  <div class="div-1-about" >
+   
+      <div class="div-2-about">
+        <div class="div-3-about">
+          <div>
+            <h2 style="color:white; font-size: 5vw;">About Us</h2>
           </div>
-        
+          <div class="div-3-button">
+            <button class="gettarted"  onclick="scrollToSection('slider3')">Mission</button>
+            <button class="gettarted"  onclick="scrollToSection('slider2')">Vision</button>
+          </div>
+      </div>
+        <p style="color:white; padding-left: 4vw;">At Wontinola, we specialize in a modern twist on classic Asian dishes; merging the rich, gingery flavors of Filipino tinola with tender of Chinese wontons for a comforting and crave-worthy soup experience. 
+        </p>
+        </div>
+      </div>
     </div>
+    <div >
+      <img class="bg-image" src="picture/wontinola-2.png" alt="wontinola-2">
+        <div>
+  </div>
 
-    
+  <div class="div-1-about" >
+   
+    <div class="div-2-about">
+      <div class="div-6-about">
+        <div>
+          <h2 style="color:white; font-size: 5vw;" id="slider3">Our Mission</h2>
+        </div>
+        </div>
+        <p style="color:white; padding-left: 4vw; padding-right:20vw;">
+          
+To make affordable yet simple, safe and delicious, and authentic wontinola menu. Our customer's satisfaction is our focus.
+        </p>
+        </div>
+      </div>
+
+      <div class="div-1-about" >
+   
+        <div class="div-2-about">
+          <div class="div-6-about">
+            <div>
+              <h2 style="color:white; font-size: 5vw;" id="slider2">Our Vision</h2>
+            </div>
+            </div>
+            <p style="color:white; padding-left: 4vw; padding-right:20vw;">
+              To be a high-class brand, and historic food culture in our region, known for our innovative cuisine, exceptional service, and commitment to sustainability.
+            </p>
+            </div>
+          </div>
+  <footer>
+    <div class="footer-1">
+      <p >For more information, kindly contact us through:</p>
+    </div>
+    <div class="button-grid">
+      <button class="logo-button-column" onclick="copyNumber('09056053442')">
+        <img src="picture/phone.png" alt="Logo">
+        <span>Phone Number</span>
+      </button>
+      <button class="logo-button-column" onclick="window.location.href='https\://www.instagram.com/wontinola.official'">
+        <img src="picture/ig.png" alt="Logo">
+        <span>Instagram</span>
+      </button>
+      <button class="logo-button-column" onclick="window.location.href='https\://www.facebook.com/share/1EdebhKNjS'">
+        <img src="picture/fb.png" alt="Logo">
+        <span>Facebook</span>
+      </button>
+      <button class="logo-button-column" onclick="copyNumber('connectwithwontinola@gmail.com')">
+        <img src="picture/email.png" alt="Logo">
+        <span>Email</span>
+      </button>
+    </div>
+  </footer>
 
   <script>
     function toggleMenu() {
@@ -65,6 +125,17 @@
       
       lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
     });
+
+    function copyNumber(ss) {
+      navigator.clipboard.writeText(ss).then(function() {
+        alert('Text copied: ' + ss);
+      }, function(err) {
+        console.error('Could not copy text: ', err);
+      });
+    }
+    function scrollToSection(id) {
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
   </script>
 </body>
 </html>

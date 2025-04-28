@@ -1,0 +1,59 @@
+
+html {
+    scroll-behavior: smooth;
+  }
+  body{
+     background-image: url('picture/background.png');
+    background-color: black;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+.div-1-about{
+    padding: 10%;
+   
+    height:400px;
+    display: flex;
+}
+.div-2-about{
+    display:flex;
+    align-items: center;
+    justify-content: center ;
+    flex-direction: row;
+    padding-right:10vw;
+}
+
+.div-3-button{
+    display: flex;
+    flex-direction: row;
+    gap:3px;
+}
+
+.bg-image {
+    position: absolute;
+    top: 358px;
+    left: 50%;
+    width: 50vw;
+    height: 60vw;
+    object-fit: cover;
+    transform: translate(30%, -20%);
+    z-index: 0;
+  }
+.div-5-about{
+    background-image: url('picture/background.png');
+    height:50vw;
+}
+.div-6-about{
+    display:flex;
+    flex-direction: row;
+}
+
+@media (max-width: 600px) {
+    .div-2-about{
+        display:flex;
+        align-items: center;
+        justify-content: center ;
+        flex-direction: column;
+        gap:10px;
+        padding-right:10vw;
+    }
+}
