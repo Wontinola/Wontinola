@@ -87,7 +87,25 @@ table {
     width: 30vw;
     font-family: 'Poppins', sans-serif;
   }
-  
+  label{
+    color:white;
+  }
+  .form-div{
+    display: flex;
+    flex-direction: column;
+  }
+  input{
+    background-color: rgb(117, 10, 10);
+    color: white;
+    height: 3vw;
+    border-radius: 10px;
+    padding-left: 10px;
+  }
+  input:focus{
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+  }
+
   .receipt-1 h6 {
     font-size: 1.5vw;
     margin-bottom: 1vw;

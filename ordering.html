@@ -29,9 +29,9 @@
     <button onclick="window.location.href='flavors.html'">Flavors</button>
   </div>
  
-  <div class="whole-div"> 
+  <div class="whole-div" > 
     
-    <div class="cp-div">
+    <div class="cp-div"style="display: none;">
       <h2 style="color:white; font-size: 5vw;">Order</h2>
       <h6 style="color:white; font-size: 2vw;">Choose Product:</h6>
       <div class="button-orders">
@@ -43,6 +43,19 @@
       <button class="addons-buttons" onclick="addRow('Dumplings x3', 25)">Dumplings<br>3pcs ₱25.00</button>
       <button class="addons-buttons" onclick="addRow('Chili', 5)">Chili<br>₱5.00</button>
       <button class="addons-buttons" onclick="addRow('Fried Garlic', 5)">Fried Garlic<br>₱5.00</button>
+    </div>
+
+    <div class="form-div">
+      <h2 style="color:white; font-size: 5vw;">Check Out</h2>
+      <h6 style="color:white; font-size: 2vw;">Choose Product:</h6>
+      <label for="username">Name:</label>
+      <input type="text" id="username" name="username"><br><br>
+      <label for="username">Email:</label>
+      <input type="email" id="username" name="username"><br><br>
+      <label for="username">Contact Number:</label>
+      <input type="number" id="username" name="username"><br><br>
+      <label for="username">Address:</label>
+      <input type="text" id="username" name="username"><br><br>
     </div>
 
    <div class="receipt-1">
@@ -70,7 +83,6 @@
     </div>
   </div>
   </div>
-
   <footer>
     <div class="footer-1">
       <p >For more information, kindly contact us through:</p>
@@ -96,6 +108,14 @@
   </footer>
 
   <script>
+    
+    function copyNumber(ss) {
+      navigator.clipboard.writeText(ss).then(function() {
+        alert('Text copied: ' + ss);
+      }, function(err) {
+        console.error('Could not copy text: ', err);
+      });
+    }
   var subtot = 0;
 var deliveryCharge = 25;
 
