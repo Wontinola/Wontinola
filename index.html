@@ -29,11 +29,14 @@
 
   <div class="content">
     <div class="div-1" style="background-color: rgb(23, 2, 2);">
-        <video autoplay muted loop playsinline class="bg-video" onloadeddata="this.play()">
-            <source src="picture/Wontinola.mp4" type="video/mp4">
-            Your browser does not support HTML5 video.
-          </video>
-        
+      <video autoplay muted loop playsinline class="bg-video" onloadeddata="this.play()">
+        <source src="picture/Wontinola.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+      </video>
+      <audio id="bg-audio" autoplay loop>
+        <source src="picture/Wontinola.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+      </audio>
         <div class="sdfs">
             <h1>Wontinola</h1>
             <h6>KUNG SAAN PANALO KA!</h6>
@@ -108,12 +111,21 @@
       lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
     });
 
+    window.addEventListener('scroll', function () {
+      const audio = document.getElementById('bg-audio');
+      audio.play().catch(() => {
+        console.warn("Autoplay with sound was blocked by the browser.");
+
+      });
+    });
+
     function copyNumber(ss) {
       navigator.clipboard.writeText(ss).then(function() {
         alert('Text copied: ' + ss);
       }, function(err) {
         console.error('Could not copy text: ', err);
       });
+   
     }
   </script>
 </body>
