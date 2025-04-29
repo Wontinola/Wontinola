@@ -26,6 +26,7 @@ header {
 
 footer {
   background-color: #9e2522;
+  width:100%;
 }
 
 .button-grid {
@@ -264,7 +265,7 @@ span {
   background-image: url('picture/button.png');
   background-color: rgb(163, 22, 22);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size:cover;
   display: flex;
   align-items: center;
   padding-left: 14px;
@@ -305,7 +306,7 @@ span {
   .gettarted {
     font-size: 3vw;
     width: 24vw;
-    height: 10vw;
+    height: 7vw;
   }
 
   .button-grid {

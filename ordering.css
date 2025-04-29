@@ -1,0 +1,140 @@
+.whole-div{
+    padding:100px;
+    display:flex;
+    justify-content: space-between;
+}
+.button-orders{
+    display: flex;
+    margin-left:100px;
+ 
+    gap:2vw;
+}
+
+.image-button {
+    width: 16vw;
+    height: 16vw;
+    background-color: #33333300;
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+}
+.image-button:hover {
+    width: 16vw;
+    height: 16vw;
+    filter:opacity(70%) grayscale(50%) ; 
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+}
+.addons-buttons{
+    width: 16vw;
+    height: 6vw;
+    color:white;
+    background-color: #7c1414;
+    border-radius: 50px;
+    border-width: 10px;
+    border-color: black;
+    border-style: solid;
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+}
+.addons-buttons:hover{
+    background-color: #2d0d0d;
+    color:#fefefe87;
+    opacity: 70%;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1vw;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  th, td {
+    padding: 12px 16px;
+    text-align: left;
+    font-size: 1vw;
+    color: #333;
+
+  }
+  
+  th {
+    background-color: #f5f5f5;
+    font-weight: bold;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  tr:hover {
+    background-color: #ececec;
+  }
+  
+  .receipt-1 {
+    background-color: white;
+    border-radius: 15px;
+    padding: 2vw;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 30vw;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .receipt-1 h6 {
+    font-size: 1.5vw;
+    margin-bottom: 1vw;
+    color: #b30000;
+  }
+  
+  .receipt-1 p {
+    font-size: 1vw;
+    margin: 0.5vw 0;
+  }
+  
+  .receipt-1 button {
+    margin-top: 1vw;
+    padding: 0.8vw 1.5vw;
+    background-color: #b30000;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1vw;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .receipt-1 button:hover {
+    background-color: #900000;
+  }
+
+  @media (max-width: 600px) {
+    .receipt-1 {
+      width: 90vw;
+      padding: 5vw;
+    }
+  
+    th, td {
+      font-size: 1vw;
+    }
+  
+    .receipt-1 p,
+    .receipt-1 button,
+    .receipt-1 h6 {
+      font-size: 1vw;
+    }
+    .whole-div{
+        flex-direction: column;
+    }
+    
+  }
+  

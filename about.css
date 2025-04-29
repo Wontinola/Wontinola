@@ -10,7 +10,18 @@ html {
   }
 .div-1-about{
     padding: 10%;
-   
+    height:600px;
+    display: flex;
+}
+.div-11-about{
+    padding: 10%;
+    height:400px;
+    display: flex;
+}
+.div-14-about{
+    padding: 10%;
+    padding-left:40vw;
+    padding-right: 1vw;
     height:400px;
     display: flex;
 }
@@ -19,7 +30,7 @@ html {
     align-items: center;
     justify-content: center ;
     flex-direction: row;
-    padding-right:10vw;
+    padding-right:0px;
 }
 
 .div-3-button{
@@ -30,14 +41,28 @@ html {
 
 .bg-image {
     position: absolute;
-    top: 358px;
-    left: 50%;
-    width: 50vw;
-    height: 60vw;
+    top: 100%;
+    left: 90%;
+    width: 52vw;
+    height: 40vw;
     object-fit: cover;
-    transform: translate(30%, -20%);
+    transform: translate(-50%, -50%);
     z-index: 0;
+    pointer-events: none;
   }
+  
+  .bg-1-image {
+    position: absolute;
+    top: 210%;
+    left: 30%;
+    width: 90vw;
+    height: 40vw;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    pointer-events: none;
+  }
+  
 .div-5-about{
     background-image: url('picture/background.png');
     height:50vw;
@@ -46,7 +71,9 @@ html {
     display:flex;
     flex-direction: row;
 }
-
+  .p-11{
+        padding-right:2vw;
+      }
 @media (max-width: 600px) {
     .div-2-about{
         display:flex;
@@ -54,6 +81,21 @@ html {
         justify-content: center ;
         flex-direction: column;
         gap:10px;
-        padding-right:10vw;
     }
+    .bg-image {
+        width: 70vw;
+        height: 70vw;
+      }
+      .bg-1-image {
+        width: 79vw;
+        height: 70vw;
+      }
+      h2{
+        display: flex;
+        align-items:center;
+        justify-content: center;
+      }
+      .p-11{
+        padding-right:2vw;
+      }
 }

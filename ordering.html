@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="picture/favicon.png" type="image/png">
+  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="about.css">
+  <link rel="stylesheet" href="ordering.css">
+  <title>Wontinola</title>
+</head>
+<body>
+  <header>
+    <img src="picture/log.png" alt="Logo" class="logo" />
+    <div class="nav-buttons">
+      <button onclick="window.location.href='index.html'" >Home</button>
+      <button onclick="window.location.href='about.html'">About</button>
+      <button onclick="window.location.href='flavors.html'">Flavors</button>
+    </div>
+    <div class="burger" onclick="toggleMenu()">☰</div>
+  </header>
+
+  <div id="overlay" class="overlay" onclick="toggleMenu()"></div>
+
+  <div id="sidePanel" class="side-panel">
+    <button onclick="window.location.href='index.html'" >Home</button>
+    <button onclick="window.location.href='about.html'">About</button>
+    <button onclick="window.location.href='flavors.html'">Flavors</button>
+  </div>
+ 
+  <div class="whole-div"> 
+    
+    <div class="cp-div">
+      <h2 style="color:white; font-size: 5vw;">Order</h2>
+      <h6 style="color:white; font-size: 2vw;">Choose Product:</h6>
+      <div class="button-orders">
+        <button class="image-button" style="background-image: url('picture/regular.png');" onclick="addRow('Regular')"></button>
+        <button class="image-button" style="background-image: url('picture/spicy.png');"  onclick="addRow('Spicy')"></button>
+      </div>
+    <h6  style="color:white; font-size: 2vw;">Recommended for you:</h6>
+    <div class="button-orders"></div>
+      <button class="addons-buttons" onclick="addRow('Dumplings x3')">Dumplings<br>3pcs ₱25.00</button>
+      <button class="addons-buttons" onclick="addRow('Chili')">Chili<br>₱5.00</button>
+      <button class="addons-buttons" onclick="addRow('Fried Garlic')">Fried Garlic<br>₱5.00</button>
+    </div>
+
+   <div class="receipt-1">
+    <h6>ORDER DETAILS</h6>
+    <table>
+      <thead>
+        <tr>
+           <th>
+            Quantity
+           </th>
+           <th>
+            Product Name
+           </th>
+        </tr>
+      </thead>
+      <tbody>
+       
+      </tbody>
+    </table>
+    <p>Subtotal: </p>
+    <p>Delivery Change: </p>
+    <p>Total: </p>
+    <div>
+      <button>Check Out</button>
+    </div>
+  </div>
+  </div>
+
+  <footer>
+    <div class="footer-1">
+      <p >For more information, kindly contact us through:</p>
+    </div>
+    <div class="button-grid">
+      <button class="logo-button-column" onclick="copyNumber('09056053442')">
+        <img src="picture/phone.png" alt="Logo">
+        <span>Phone Number</span>
+      </button>
+      <button class="logo-button-column" onclick="window.location.href='https\://www.instagram.com/wontinola.official'">
+        <img src="picture/ig.png" alt="Logo">
+        <span>Instagram</span>
+      </button>
+      <button class="logo-button-column" onclick="window.location.href='https\://www.facebook.com/share/1EdebhKNjS'">
+        <img src="picture/fb.png" alt="Logo">
+        <span>Facebook</span>
+      </button>
+      <button class="logo-button-column" onclick="copyNumber('connectwithwontinola@gmail.com')">
+        <img src="picture/email.png" alt="Logo">
+        <span>Email</span>
+      </button>
+    </div>
+  </footer>
+
+  <script>
+     function addRow(name) {
+      const table = document.querySelector('table tbody');
+      const rows = table.querySelectorAll('tr');
+
+      for (let row of rows) {
+        const productName = row.children[1].textContent;
+        if (productName === name) {
+          const quantityCell = row.children[0];
+          quantityCell.textContent = parseInt(quantityCell.textContent) + 1;
+          return;
+        }
+      }
+
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td>1</td>
+        <td>${name}</td>
+        <td><button onclick="increment(this)">+</button></td>
+        <td><button onclick="decrement(this)">-</button></td>
+      `;
+      table.appendChild(row);
+    }
+
+    function increment(btn) {
+      const td = btn.closest('tr').querySelector('td');
+      td.textContent = parseInt(td.textContent) + 1;
+    }
+
+    function decrement(btn) {
+      const td = btn.closest('tr').querySelector('td');
+      let value = parseInt(td.textContent);
+      
+      if (value > 1) {
+        td.textContent = value - 1;
+      } else {
+        btn.closest('tr').remove(); 
+      }
+    }
+  </script>
+</body>
+</html>
