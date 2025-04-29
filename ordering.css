@@ -91,7 +91,7 @@ table {
     color:white;
   }
   .form-div{
-    display: flex;
+    display: none;
     flex-direction: column;
   }
   input{
@@ -115,6 +115,7 @@ table {
   .receipt-1 p {
     font-size: 1vw;
     margin: 0.5vw 0;
+    
   }
   
   .receipt-1 button {

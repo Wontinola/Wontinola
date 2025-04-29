@@ -31,7 +31,7 @@
  
   <div class="whole-div" > 
     
-    <div class="cp-div"style="display: none;">
+    <div class="cp-div" id="cp-div">
       <h2 style="color:white; font-size: 5vw;">Order</h2>
       <h6 style="color:white; font-size: 2vw;">Choose Product:</h6>
       <div class="button-orders">
@@ -45,17 +45,17 @@
       <button class="addons-buttons" onclick="addRow('Fried Garlic', 5)">Fried Garlic<br>₱5.00</button>
     </div>
 
-    <div class="form-div">
+    <div class="form-div" id="form-div">
       <h2 style="color:white; font-size: 5vw;">Check Out</h2>
       <h6 style="color:white; font-size: 2vw;">Choose Product:</h6>
       <label for="username">Name:</label>
       <input type="text" id="username" name="username"><br><br>
-      <label for="username">Email:</label>
-      <input type="email" id="username" name="username"><br><br>
-      <label for="username">Contact Number:</label>
-      <input type="number" id="username" name="username"><br><br>
-      <label for="username">Address:</label>
-      <input type="text" id="username" name="username"><br><br>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email"><br><br>
+      <label for="contactNum">Contact Number:</label>
+      <input type="number" id="contactNum" name="contactNum"><br><br>
+      <label for="address">Address:</label>
+      <input type="text" id="address" name="address"><br><br>
     </div>
 
    <div class="receipt-1">
@@ -79,7 +79,7 @@
     <p>Delivery Change: ₱25.00 </p>
     <p id="total">Total: </p>
     <div>
-      <button>Check Out</button>
+      <button onclick="toggleDisplay()">Check Out</button>
     </div>
   </div>
   </div>
@@ -173,6 +173,19 @@ function decrement(btn, price) {
   }
   updateTotals();
 }
+function toggleDisplay() {
+  function toggleDisplay() {
+  const content = document.getElementById("cp-div");
+  if (content.classList.contains("hidden")) {
+    content.classList.remove("hidden");
+    content.classList.add("visible");
+  } else {
+    content.classList.remove("visible");
+    content.classList.add("hidden");
+  }
+}}
+
+
 
   </script>
 </body>
