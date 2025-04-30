@@ -3,17 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
   <link rel="icon" href="picture/favicon.png" type="image/png">
-  <title>Wontinola</title>
+  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="ordering.css" />
+  <title>Wontinola</title>
 </head>
 <body>
   <header>
     <img src="picture/log.png" alt="Logo" class="logo" />
     <div class="nav-buttons">
-      <button onclick="window.location.href='index.html'">Home</button>
-      <button onclick="window.location.href='about.html'" >About</button>
+      <button onclick="window.location.href='index.html'" >Home</button>
+      <button onclick="window.location.href='about.html'">About</button>
       <button onclick="window.location.href='flavors.html'" style="text-decoration: underline;">Flavors</button>
     </div>
     <div class="burger" onclick="toggleMenu()">☰</div>
@@ -22,35 +23,41 @@
   <div id="overlay" class="overlay" onclick="toggleMenu()"></div>
 
   <div id="sidePanel" class="side-panel">
-    <button onclick="window.location.href='index.html'">Home</button>
+    <button onclick="window.location.href='index.html'" >Home</button>
     <button onclick="window.location.href='about.html'">About</button>
     <button onclick="window.location.href='flavors.html'" style="text-decoration: underline;">Flavors</button>
   </div>
 
-  <div class="content">
-    <div class="div-1" style="background-color: rgb(23, 2, 2);">
-        <!-- <video autoplay muted loop playsinline class="bg-video">
-            <source src="picture/video.mp4" type="video/mp4">
-            Your browser does not support HTML5 video.
-          </video>
-         -->
-          <div class="sdfs">
-            <h1>Flavors</h1>
-          </div>
-        
-    </div>
+  <div class="div-1-flavors" >
+    <img src="picture/regular.png" alt="picture/regular.png">
+    <img src="picture/spicy.png"  alt="picture/spicy.png">
+  </div>
 
-    
+  <footer>
+    <div class="footer-1">
+      <p >For more information, kindly contact us through:</p>
+    </div>
+    <div class="button-grid">
+      <button class="logo-button-column" onclick="copyNumber('09056053442')">
+        <img src="picture/phone.png" alt="Logo">
+        <span>Phone Number</span>
+      </button>
+      <button class="logo-button-column" onclick="window.location.href='https\://www.instagram.com/wontinola.official'">
+        <img src="picture/ig.png" alt="Logo">
+        <span>Instagram</span>
+      </button>
+      <button class="logo-button-column" onclick="window.location.href='https\://www.facebook.com/share/1EdebhKNjS'">
+        <img src="picture/fb.png" alt="Logo">
+        <span>Facebook</span>
+      </button>
+      <button class="logo-button-column" onclick="copyNumber('connectwithwontinola@gmail.com')">
+        <img src="picture/email.png" alt="Logo">
+        <span>Email</span>
+      </button>
+    </div>
+  </footer>
 
   <script>
-    function copyNumber(ss) {
-      navigator.clipboard.writeText(ss).then(function() {
-        alert('Text copied: ' + ss);
-      }, function(err) {
-        console.error('Could not copy text: ', err);
-      });
-    }
-    
     function toggleMenu() {
       const panel = document.getElementById("sidePanel");
       const overlay = document.getElementById("overlay");
@@ -59,20 +66,14 @@
       document.body.style.overflow = panel.classList.contains("open") ? "hidden" : "";
     }
 
-    let lastScrollTop = 0;
-    const header = document.querySelector('header');
-
-    window.addEventListener('scroll', function() {
-      const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-      
-      if (currentScroll > lastScrollTop) {
-        header.style.top = "-70px";
-      } else {
-        header.style.top = "0";
-      }
-      
-      lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
-    });
+    function copyNumber(ss) {
+      navigator.clipboard.writeText(ss).then(function() {
+        alert('Text copied: ' + ss);
+      }, function(err) {
+        console.error('Could not copy text: ', err);
+      });
+   
+    }
   </script>
 </body>
 </html>

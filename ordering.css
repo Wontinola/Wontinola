@@ -2,6 +2,19 @@
     padding:100px;
     display:flex;
     justify-content: space-between;
+   
+}
+.div-1-flavors{  
+  background-image: url('picture/background.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: black;
+  padding:80px;
+  padding-top: 100px;
+  padding-bottom: 50px;
+  display:flex;
+  justify-content: space-between;
+
 }
 .button-orders{
     display: flex;
@@ -20,14 +33,7 @@
     cursor: pointer;
 }
 .image-button:hover {
-    width: 16vw;
-    height: 16vw;
     filter:opacity(70%) grayscale(50%) ; 
-    background-size: cover; 
-    background-position: center;
-    background-repeat: no-repeat;
-    border: none;
-    cursor: pointer;
 }
 .addons-buttons{
     width: 16vw;
@@ -89,21 +95,28 @@ table {
   }
   label{
     color:white;
+    font-size: 2vw;
   }
   .form-div{
     display: none;
     flex-direction: column;
+
   }
   input{
     background-color: rgb(117, 10, 10);
     color: white;
     height: 3vw;
+    width: 30vw;
     border-radius: 10px;
     padding-left: 10px;
   }
   input:focus{
     background-color: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
+  }
+  input:end{
+    background-color: rgb(117, 10, 10);
+    color: white; 
   }
 
   .receipt-1 h6 {
@@ -133,17 +146,46 @@ table {
   .receipt-1 button:hover {
     background-color: #900000;
   }
+  .cp-div h2{
+    color:white; 
+    font-size: 5vw;
+  }
+  .cp-div h6{
+    color:white; 
+    font-size: 2vw;
+  }
+  .checkout-btn{
+    display: flex;
+    justify-content: end;
+  }
+  .form-div{
+    color:white; 
+    font-size: 5vw;
+  }
+  .form-div h2{
+    color:white; 
+    font-size: 3vw;
 
+  }
+  .div-1-flavors img{ 
+    height: 35vw;
+}
   @media (max-width: 600px) {
     .receipt-1 {
       padding: 1vw;
-      width: 70vw;
+      width: 90vw;
     }
+   
     th, td {
-      font-size: 1vw;
+      font-size: 2vw;
+    }
+    table{
+      margin-bottom: 4vw;
     }
     .addons-buttons{
       font-size: 2vw;
+      height: 10vw;
+      width:20vw;
     }
     .receipt-1 p,
     .receipt-1 button,
@@ -151,10 +193,66 @@ table {
       font-size: 1vw;
     }
     .whole-div{
+      padding-left:2%;
+      padding-right: 2%;
         flex-direction: column; 
         align-items: center;
       justify-content: center;
     }
-    
+    .cp-div{
+      margin-bottom:10%;
+      width:100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .cp-div h2{
+      font-size: 20vw;
+    }
+    .cp-div h6{
+      font-size: 4vw;
+    }
+
+    .form-div{
+      margin-bottom:10%;
+      width:100%;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .form-div h2{
+      font-size: 10vw;
+    }
+    .form-div h6{
+      font-size: 4vw;
+    }
+    label{
+      font-size:4vw;
+    }
+    input{
+      width: 70vw;
+      height: 6vw;
+    }
+    .image-button{
+      width: 35vw;
+      height: 35vw;
+    } 
+    .receipt-1 h6{
+      font-size: 2vw;
+    }
+    .receipt-1 p{
+      font-size: 2vw;
+    }
+    .checkout-btn button{
+      height: 7vw;
+      font-size: 2vw;
+    }
+    .div-1-flavors{ 
+      flex-direction: column;
+      gap:20px
   }
-  
+  .div-1-flavors img{ 
+    height:50vw;
+}
+}
