@@ -15,15 +15,19 @@ html {
 }
 .div-11-about{
     padding: 10%;
+    padding-right: 0%;
     height:400px;
     display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .div-14-about{
     padding: 10%;
-    padding-left:40vw;
-    padding-right: 1vw;
+    padding-left:0%;
     height:400px;
     display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .div-2-about{
     display:flex;
@@ -40,27 +44,12 @@ html {
 }
 
 .bg-image {
-    position: absolute;
-    top: 100%;
-    left: 90%;
-    width: 52vw;
-    height: 40vw;
-    object-fit: cover;
-    transform: translate(-50%, -50%);
-    z-index: 0;
-    pointer-events: none;
+  height:40vw;
   }
   
   .bg-1-image {
-    position: absolute;
-    top: 210%;
-    left: 30%;
-    width: 90vw;
-    height: 40vw;
-    object-fit: cover;
-    transform: translate(-50%, -50%);
-    z-index: 0;
-    pointer-events: none;
+    height:30vw;
+    margin-right: 2vw;
   }
   
 .div-5-about{
@@ -87,8 +76,8 @@ html {
         height: 70vw;
       }
       .bg-1-image {
-        width: 79vw;
-        height: 70vw;
+        width: 49vw;
+        height: 50vw;
       }
       h2{
         display: flex;
@@ -97,5 +86,8 @@ html {
       }
       .p-11{
         padding-right:2vw;
+      }
+      .div-14-about{
+        height:100vw;
       }
 }
