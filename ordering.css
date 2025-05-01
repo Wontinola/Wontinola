@@ -172,6 +172,7 @@ table {
 }
 .form-div-1{
   display: flex; 
+  gap:10px;
   justify-content: start; 
   align-items: center; 
   width: 100%;

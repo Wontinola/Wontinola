@@ -48,6 +48,10 @@
 
 
     <div  class="form-div" id="gcash">
+      <div class="form-div-1">
+        <button class="form-div-back" onclick="backDiv()">Back</button>
+       <h2>Check Out</h2>
+     </div>
       <label for="username">Phone Number: </label>
       <input type="number" id="phone-number" name="username" maxlength="11" placeholder="09*********">
       <label for="password">Password: </label>
@@ -55,14 +59,18 @@
     </div>
 
     <div  class="form-div" id="pincode">
+      <div class="form-div-1">
+        <button class="form-div-back" onclick="backDiv()">Back</button>
+       <h2>Check Out</h2>
+     </div>
       <label for="pin-number">Pin Number: </label>
-      <input type="number" id="phone number" name="pin-number" maxlength="4" >
+      <input type="number" id="pinnumber" name="pin-number" maxlength="4" >
     
     </div>
 
     <div class="form-div" id="form-div">
       <div class="form-div-1">
-         <button class="form-div-back">Back</button>
+         <button class="form-div-back" onclick="backDiv()">Back</button>
         <h2>Check Out</h2>
       </div>
      <label for="username">Name:</label>
@@ -74,7 +82,7 @@
       <label for="address">Address:</label>
       <input type="text" id="address" name="address">
       <label for="options">Mode of Payment:</label>
-      <select name="options" id="select-1" onchange="changeMode()">
+      <select name="options" id="select-1">
         <option value="option1">Cash on Delivery</option>
         <option value="option2">E-Wallet (G-Cash, PayMaya)</option>
         <option value="option3">Credit Card</option>
@@ -184,6 +192,8 @@
       document.getElementById('gcash').style.display = 'none';
       document.getElementById('pincode').style.display = 'none';
       isAlreadyOpen = false
+      isAlreadyOpen1 = false;
+      isAlreadyOpen2 = false;
     }
 
   }
@@ -207,8 +217,33 @@
     }
     updateTotals();
     }
-   
+  
+  const formDiv = document.getElementById('form-div');
+  const gcashDiv = document.getElementById('gcash');
+  const pinDiv = document.getElementById('pincode');
+
+  function backDiv(){
+    if(pinDiv.style.display == 'flex'){
+      gcashDiv.style.display = 'flex';
+      pinDiv.style.display = 'none';
+      isAlreadyOpen2 = false;
+      return;
+    }else if(gcashDiv.style.display == 'flex'){
+      formDiv.style.display = 'flex';
+      gcashDiv.style.display = 'none'; 
+      isAlreadyOpen1 = false;
+      return;
+    }else if(formDiv.style.display == 'flex'){
+      document.getElementById('cp-div').style.display = '';
+      formDiv.style.display = 'none';
+      isAlreadyOpen = false;
+      return;
+    }
+  }
+
   var isAlreadyOpen = false;
+  var isAlreadyOpen1 = false;
+  var isAlreadyOpen2 = false;
 
   function toggleDisplay() {
     if (!isFine) {
@@ -216,9 +251,7 @@
       return;
     }
 
-    const formDiv = document.getElementById('form-div');
-    const gcashDiv = document.getElementById('gcash');
-    const pinDiv = document.getElementById('pincode');
+ 
     
     if (formDiv.style.display === 'flex' || isAlreadyOpen) {
       
@@ -227,24 +260,31 @@
       const contactNum = document.getElementById('contactNum').value.trim();
       const address = document.getElementById('address').value.trim();
       const modeofpayment = document.getElementById('select-1').value.trim();
-      // const modeofpayment = document.getElementById('select-1').value.trim();
-      // const modeofpayment = document.getElementById('select-1').value.trim();
 
       if (!name || !email || !contactNum || !address) {
         alert("Please fill out all the fields!");
         return;
       } 
       else if(modeofpayment == "option2"){
-        if(gcashDiv.style.display == 'flex'){
+        if(gcashDiv.style.display == 'flex' || isAlreadyOpen1){
           const phoneNum = document.getElementById('phone-number').value.trim();
           const password = document.getElementById('password').value.trim();
+          isAlreadyOpen1 = true;
           if(!phoneNum || !password){
             alert("Please fill out all the fields!");
             return;
           }else if(password == "1234"){
-            if (formDiv.style.display === 'flex') {
-
+            if (pinDiv.style.display === 'flex' || isAlreadyOpen2) {
+              const pinnumber = document.getElementById('pinnumber').value.trim();
+              if(pinnumber == "1234"){
+                alert("Thank you for ordering, " + name);
+                window.location.href = 'index.html';
+              }else{
+                alert("Wrong Pin Number!");
+                return;
+              }
             }
+            isAlreadyOpen2 = true;
             gcashDiv.style.display = 'none';
             pinDiv.style.display = 'flex';
             return;
@@ -252,14 +292,14 @@
             alert("Wrong Password!");
             return;
           }             
+
         } 
         formDiv.style.display = 'none';
             gcashDiv.style.display = 'flex'; 
            return;
       }else {
-          alert("Thank you for ordering " + name);
+          alert("Thank you for ordering, " + name);
           window.location.href = 'index.html';
-          return;
         }
     } 
  
