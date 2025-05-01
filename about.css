@@ -13,22 +13,32 @@ html {
     height:600px;
     display: flex;
 }
-.div-11-about{
-    padding: 10%;
-    padding-right: 0%;
-    height:400px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.div-11-about,
+.div-14-about {
+  padding: 10%;
+  padding-right: 0%;
+  padding-top:10%;
+  height:100%;
+  top: 0px;
+  left: -250px; 
+  width: 100%;
+  position:fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(104, 23, 23, 0.861);
+  pointer-events: none;
+  opacity: 0; 
+  transition: left 0.5s ease, opacity 0.5s ease;
 }
-.div-14-about{
-    padding: 10%;
-    padding-left:0%;
-    height:400px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
+.div-11-about.active,
+.div-14-about.active {
+  left: 0px;
+  opacity: 1;
+  pointer-events: none; 
 }
+
 .div-2-about{
     display:flex;
     align-items: center;

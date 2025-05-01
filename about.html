@@ -36,8 +36,10 @@
             <h2 style="color:white; font-size: 5vw;">About Us</h2>
           </div>
           <div class="div-3-button">
-            <button class="gettarted"  onclick="scrollToSection('slider3')">Mission</button>
-            <button class="gettarted"  onclick="scrollToSection('slider2')">Vision</button>
+             <!--onclick="scrollToSection('slider3')" -->
+             <button class="gettarted" id="mission">Mission</button>
+              <!-- onclick="scrollToSection('slider2')" -->
+            <button class="gettarted" id="vision">Vision</button>
           </div>
       </div>
         <p style="color:white; padding-left: 4vw;">At Wontinola, we specialize in a modern twist on classic Asian dishes; merging the rich, gingery flavors of Filipino tinola with tender of Chinese wontons for a comforting and crave-worthy soup experience. 
@@ -45,7 +47,7 @@
         </div>
       </div>
     
-  <div class="div-11-about">
+  <div class="div-11-about" id="div-11-about">
     <div class="div-2-about">
       <div class="div-6-about">
         <div>
@@ -61,7 +63,7 @@
       
       </div>
 
-      <div class="div-14-about" >
+      <div class="div-14-about" id="div-14-about" >
         <img class="bg-1-image" src="picture/soup-3.png" alt="soup-2">
         <div class="div-2-about">
           <div class="div-6-about">
@@ -99,6 +101,26 @@
   </footer>
 
   <script>
+  const button = document.getElementById('mission');
+    const div = document.getElementById('div-11-about');
+
+    button.addEventListener('mouseenter', function() {
+      div.classList.add('active'); 
+    });
+    button.addEventListener('mouseleave', function() {
+      div.classList.remove('active'); 
+    });
+
+    const button2 = document.getElementById('vision');
+    const div2 = document.getElementById('div-14-about');
+
+    button2.addEventListener('mouseenter', function() {
+      div2.classList.add('active');
+    });
+    button2.addEventListener('mouseleave', function() {
+      div2.classList.remove('active');
+    });
+
     function toggleMenu() {
       const panel = document.getElementById("sidePanel");
       const overlay = document.getElementById("overlay");
