@@ -253,7 +253,7 @@
               <span class="star" data-value="4">&#9733;</span>
               <span class="star" data-value="5">&#9733;</span>
             </div>
-            <button class="button-submit" onclick="alert('Thank you for rating!');">Submit</button>
+            <button class="button-submit" id="submitBtn">Submit</button>
             <br>
           </div>
           
@@ -341,13 +341,32 @@
         div11.style.display = 'none';
     } 
     const stars = document.querySelectorAll('.star');
+  const submitBtn = document.getElementById('submitBtn');
   let selectedRating = 0;
-
+  let isSubmitted = false;
+    var isDonee=false;
   stars.forEach(star => {
     star.addEventListener('click', () => {
+      if (isSubmitted) return; 
       selectedRating = star.getAttribute('data-value');
       updateStars(selectedRating);
     });
+  });
+
+  submitBtn.addEventListener('click', () => {
+    if(isDonee){
+        return;
+    }
+    if (selectedRating > 0) {
+      isSubmitted = true;
+      stars.forEach(star => {
+        star.classList.add('disabled');
+      });
+      alert(`Thank you! You rated us ${selectedRating} stars.`);
+      isDonee = true;
+    } else {
+      alert('Please select a rating first.');
+    }
   });
 
   function updateStars(rating) {
