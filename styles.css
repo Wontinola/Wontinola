@@ -327,17 +327,13 @@ span {
   height: 60vw;
  }
 
-  .div-2 {
-    display: grid;
-    padding-top: 100px;
-    place-items: center;
-    padding-bottom: 100px;
-    padding-left: 10%;
-    padding-right: 0px;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    height:500px;
-  }
+ .div-2 {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 100px 0 100px 7%;
+  height: 900px;
+}
 
   .div-2h1 {
     font-size: 20vw;
@@ -348,5 +344,6 @@ span {
   }
   .sdfs{
     align-items: center;
+    width:500px;
   }
 }

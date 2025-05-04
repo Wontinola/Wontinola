@@ -1,0 +1,234 @@
+.div-1-transaction{
+    height: 500px;
+    padding-top: 70px;
+    background-image: url('picture/background.png');
+    background-color: black;
+}
+
+.div-2-transaction{
+    padding: 0px 70px 70px 70px;
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+}
+
+.div-3-transaction {
+    padding: 5% 0;
+    height: 100%;
+    top: 0;
+    left: 0; 
+    width: 100%;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    pointer-events: none; 
+    transition: opacity 0.5s ease;
+    z-index: 1000; 
+}
+
+.div-3-transaction.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.div-4-transaction{
+    padding:20px;
+    border-radius: 30px;
+    background-color:  white;
+    height: fit-content;
+    width: fit-content;
+    display: none;
+}
+.div-5-transaction{
+    display: flex;
+    flex-direction: row;
+    gap:50px;
+}
+.div-8-transaction{
+    display: flex;
+    justify-content: space-between;
+}
+.div-10-transaction{
+    padding:20px;
+    border-radius: 30px;
+    background-color:  white;
+    height: fit-content;
+    width: fit-content;
+    display:none;
+}
+
+table {
+    width: 100%; 
+    border: 1px solid black; 
+    border-collapse: collapse; 
+}
+
+td, th {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid black;
+}
+
+
+
+.transaction-button {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    background-color: #b30000;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 12px;
+    width: 100%;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+.transaction-button:hover
+{
+    background-color: #90000066;
+}
+  .transaction-id {
+    font-size: 18px;
+  }
+
+  .status {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+    font-size: 14px;
+    font-weight: normal;
+  }
+
+  .status-dot {
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    margin-right: 6px;
+  }
+  .div-6-transaction p:nth-child(odd) {
+    color: red;
+  }
+  .div-6-transaction p:nth-child(even) {
+    font-size: 13px;
+  }
+  .cancel-order-container {
+    background-color: #f9f6f2;
+    border-radius: 20px;
+    padding: 30px;
+    width: 400px;
+    font-family: 'Poppins', sans-serif;
+    color: #5c0000;
+    display: none;
+    flex-direction: column;
+  }
+  
+  .cancel-order-container h2 {
+    margin-bottom: 10px;
+  }
+  
+  .reason-label {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .radio-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    width: fit-content;
+    color: black;
+  }
+  
+  .radio-option input[type="radio"] {
+    accent-color: #800000; 
+  }
+  
+  .cancel-buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px;
+  }
+  
+  .cancel-buttons button {
+    background-color: #5c0000;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+
+  }
+  
+
+  input{
+    width: 1vw;
+  }
+  .rating-container {
+    display:none;
+    background-color: #f8f5f1;
+    padding: 30px;
+    border-radius: 20px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  }
+  .rating-container h2 {
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #222;
+  }
+  .stars {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .star {
+    font-size: 30px;
+    color: lightgray;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  .star.selected {
+    color: #c62828;
+  }
+  .button-submit {
+    background-color: #600707;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+  .button-cancel {
+    background: none;
+    border: none;
+    color: #222;
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  @media (max-width: 600px) {
+    p{
+        font-size: 10px;
+    }
+    .div-5-transaction{
+        display: flex;
+        flex-direction: row;
+        gap:5px;
+    }
+    
+  }

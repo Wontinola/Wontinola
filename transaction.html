@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="picture/favicon.png" type="image/png">
+  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="ordering.css" />
+  <link rel="stylesheet" href="transaction.css" />
+  <title>Wontinola</title>
+</head>
+<body>
+  <header>
+    <img src="picture/log.png" alt="Logo" class="logo" />
+    <div class="nav-buttons">
+      <button onclick="window.location.href='index.html'" >Home</button>
+      <button onclick="window.location.href='about.html'">About</button>
+      <button onclick="window.location.href='flavors.html'">Flavors</button>
+      <button onclick="window.location.href='transaction.html'" style="text-decoration: underline;">Transaction</button>
+    </div>
+    <div class="burger" onclick="toggleMenu()">☰</div>
+  </header>
+
+  <div id="overlay" class="overlay" onclick="toggleMenu()"></div>
+
+  <div id="sidePanel" class="side-panel">
+    <button onclick="window.location.href='index.html'" >Home</button>
+    <button onclick="window.location.href='about.html'">About</button>
+    <button onclick="window.location.href='flavors.html'">Flavors</button>
+    <button onclick="window.location.href='transaction.html'" style="text-decoration: underline;">Transaction</button>
+  </div>
+
+  <div class="div-1-transaction">
+    <div class="div-2-transaction">
+        <button class="transaction-button" id="status-dot-2" onclick="openPending()">
+            <div class="transaction-id">Transaction ID: ABCD1234</div>
+            <div class="status">
+              <div class="status-dot" id="status-dot-1" style="background-color: orange;"></div>
+              Pending
+            </div>
+          </button>
+          <button class="transaction-button"  onclick="openItems()">
+            <div class="transaction-id">Transaction ID: EFGH5678</div>
+            <div class="status">
+              <div class="status-dot" style="background-color: green;"></div>
+              Completed
+            </div>
+          </button>
+    </div>
+    <div class="div-3-transaction" id="div-3-transaction">
+        <div class="div-4-transaction" id="div-4-transaction">
+            <h1>Order Information</h1>
+            <div class="div-5-transaction">
+                <div class="div-6-transaction" >
+                    <p>Transaction ID:</p>
+                    <p>ABCD1234</p>
+                    <p>Name:</p>
+                    <p>Peter Parking</p>
+                    <p>Email Address:</p>
+                    <p>peter.parker@gmail.com</p>
+                    <p>Contact Number:</p>
+                    <p>0912-345-6789</p>
+                    <p>Address:</p>
+                    <p>20 Ingram Street, Forest Hills, Noveleta, Cavite</p>
+                    <p>Mode of Payment:</p>
+                    <p>Cash on Delivery</p>
+                    <p>Date and Time:</p>
+                    <p>May 1, 2025 / 11:03 P.M</p>
+                </div>
+                <div class="div-7-transaction">
+                    <table>
+                        <thead>
+                          <tr>
+                             <th>
+                              Product Name
+                             </th>
+                             <th>
+                               Quantity
+                             </th>
+                             <th>
+                                Total
+                             </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    Regular Wontinola
+                                </td>
+                                <td>
+                                    1
+                                </td>
+                                <td>
+                                    ₱60.00
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Spicy Wontinola
+                                </td>
+                                <td>
+                                    2
+                                </td>
+                                <td>
+                                    ₱140.00
+                                </td>
+                            </tr>
+                        </tbody>
+                        </table>
+                        <h6>
+                            Subtotal: ₱200.00<br>Delivery Charge: ₱25.00<br>Total: ₱225.00
+                        </h6>
+                </div>
+            </div>
+            <div class="div-8-transaction">
+                <button class="addons-buttons" style="height: 2vw; width:5vw;" onclick="closePending()">Back</button>
+                <button class="addons-buttons" style="height: 2vw; width:8vw;" onclick="openCancel()">Cancel Order</button>
+            </div>
+        </div>
+        <div class="cancel-order-container" id="cancel-order-container">
+            <h2>Cancel Order</h2>
+            <p class="reason-label">Reason</p>
+          
+            <form id="cancelForm">
+              <label class="radio-option">
+                <input type="radio" name="reason" value="Change of mind" checked>
+                Change of mind
+              </label>
+          
+              <label class="radio-option">
+                <input type="radio" name="reason" value="Wrong item ordered">
+                Wrong item ordered
+              </label>
+          
+              <label class="radio-option">
+                <input type="radio" name="reason" value="Incorrect personal details">
+                Incorrect personal details
+              </label>
+          
+              <label class="radio-option">
+                <input type="radio" name="reason" value="Payment issue">
+                Payment issue
+              </label>
+          
+              <label class="radio-option">
+                <input type="radio" name="reason" value="Found a better option">
+                Found a better option
+              </label>
+          
+              <label class="radio-option">
+                <input type="radio" name="reason" value="Emergency situation">
+                Emergency situation
+              </label>
+          
+              <label class="radio-option">
+                <input type="radio" name="reason" value="Personal reason">
+                Personal reason
+              </label>
+          
+              
+            </form>
+            <div class="cancel-buttons">
+                <button type="button" onclick="openPending()">Back</button>
+                <button type="button" onclick="orderCancel()">Cancel Order</button>
+              </div>
+          </div>        
+          <div class="div-10-transaction" id="div-10-transaction">
+            <h1>Order Information</h1>
+            <div class="div-5-transaction">
+                <div class="div-6-transaction" >
+                    <p>Transaction ID:</p>
+                    <p>EFGH5678</p>
+                    <p>Name:</p>
+                    <p>Wanda V. Sion</p>
+                    <p>Email Address:</p>
+                    <p>wanda.vision@gmail.com</p>
+                    <p>Contact Number:</p>
+                    <p>0912-345-6789</p>
+                    <p>Address:</p>
+                    <p>1103 Parasa St., Malabanan, Quezon City, Metro Manila</p>
+                    <p>Mode of Payment:</p>
+                    <p>E-Wallet (G-Cash, PayMaya)</p>
+                    <p>Date and Time:</p>
+                    <p>May 4, 2025 / 1:01 A.M</p>
+                </div>
+                <div class="div-7-transaction">
+                    <table>
+                        <thead>
+                          <tr>
+                             <th>
+                              Product Name
+                             </th>
+                             <th>
+                               Quantity
+                             </th>
+                             <th>
+                                Total
+                             </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    Spicy Wontinola
+                                </td>
+                                <td>
+                                    1
+                                </td>
+                                <td>
+                                    ₱70.00
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                   Dumplings (3 pcs.)
+                                </td>
+                                <td>
+                                    1
+                                </td>
+                                <td>
+                                    ₱25.00
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Fried Garlic
+                                </td>
+                                <td>
+                                    3
+                                </td>
+                                <td>
+                                    ₱15.00
+                                </td>
+                            </tr>
+                        </tbody>
+                        </table>
+                        <h6>
+                            Subtotal: ₱110.00<br>Delivery Charge: ₱25.00<br>Total: ₱135.00
+                        </h6>
+                </div>
+            </div>
+            <div class="div-8-transaction">
+                <button class="addons-buttons" style="height: 2vw; width:5vw;" onclick="closeItems()">Back</button>
+            </div>
+        </div>
+        <div class="rating-container" id="div-11-transaction">
+            <h2>How would you rate our product?</h2>
+            <div class="stars" id="stars">
+              <span class="star" data-value="1">&#9733;</span>
+              <span class="star" data-value="2">&#9733;</span>
+              <span class="star" data-value="3">&#9733;</span>
+              <span class="star" data-value="4">&#9733;</span>
+              <span class="star" data-value="5">&#9733;</span>
+            </div>
+            <button class="button-submit" onclick="alert('Thank you for rating!');">Submit</button>
+            <br>
+          </div>
+          
+  </div>
+  </div>
+
+  <footer>
+    <div class="footer-1">
+      <p >For more information, kindly contact us through:</p>
+    </div>
+    <div class="button-grid">
+      <button class="logo-button-column" onclick="copyNumber('09056053442')">
+        <img src="picture/phone.png" alt="Logo">
+        <span>Phone Number</span>
+      </button>
+      <button class="logo-button-column" onclick="window.location.href='https\://www.instagram.com/wontinola.official'">
+        <img src="picture/ig.png" alt="Logo">
+        <span>Instagram</span>
+      </button>
+      <button class="logo-button-column" onclick="window.location.href='https\://www.facebook.com/share/1EdebhKNjS'">
+        <img src="picture/fb.png" alt="Logo">
+        <span>Facebook</span>
+      </button>
+      <button class="logo-button-column" onclick="copyNumber('connectwithwontinola@gmail.com')">
+        <img src="picture/email.png" alt="Logo">
+        <span>Email</span>
+      </button>
+    </div>
+  </footer>
+
+  <script>
+    const div = document.getElementById('div-3-transaction');
+   
+    const div4 = document.getElementById('div-4-transaction');
+    const cancelDiv = document.getElementById('cancel-order-container');
+    const textDiv = document.getElementById('status-dot-2');
+
+    var isClose = false; 
+    
+    const div10 = document.getElementById('div-10-transaction');
+    const div11 = document.getElementById('div-11-transaction');
+
+    function openCancel(){
+        div4.style.display = 'none';
+        cancelDiv.style.display = 'flex';
+    }
+     
+    
+   
+    function orderCancel(){
+        alert('Order Canceled. Thank you for ordering');
+        isClose = true;
+        div.classList.remove('active'); 
+        cancelDiv.style.display = 'none';
+        textDiv.innerHTML = `
+  <div class="transaction-id">Transaction ID: ABCD1234</div>
+  <div class="status">
+    <div class="status-dot" id="status-dot-1" style="background-color: grey;"></div>
+    Canceled
+  </div>
+`;
+    }
+     
+    function openPending(){
+        if(isClose){
+            return;
+        }
+        div.classList.add('active'); 
+        div4.style.display = 'block';
+        cancelDiv.style.display = 'none';
+    }
+    function closePending(){
+        div.classList.remove('active'); 
+        div4.style.display = 'none';
+    } 
+    
+    function openItems(){
+        div.classList.add('active'); 
+        div10.style.display = 'block';
+        div11.style.display = 'block';
+    }
+    function closeItems(){
+        div.classList.remove('active'); 
+        div10.style.display = 'none';
+        div11.style.display = 'none';
+    } 
+    const stars = document.querySelectorAll('.star');
+  let selectedRating = 0;
+
+  stars.forEach(star => {
+    star.addEventListener('click', () => {
+      selectedRating = star.getAttribute('data-value');
+      updateStars(selectedRating);
+    });
+  });
+
+  function updateStars(rating) {
+    stars.forEach(star => {
+      star.classList.toggle('selected', star.getAttribute('data-value') <= rating);
+    });
+  }
+    function toggleMenu() {
+      const panel = document.getElementById("sidePanel");
+      const overlay = document.getElementById("overlay");
+      panel.classList.toggle("open");
+      overlay.classList.toggle("show");
+      document.body.style.overflow = panel.classList.contains("open") ? "hidden" : "";
+    }
+
+    function copyNumber(ss) {
+      navigator.clipboard.writeText(ss).then(function() {
+        alert('Text copied: ' + ss);
+      }, function(err) {
+        console.error('Could not copy text: ', err);
+      });
+   
+    }
+  </script>
+</body>
+</html>
