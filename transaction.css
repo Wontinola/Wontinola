@@ -113,9 +113,10 @@ td, th {
   }
   .div-6-transaction p:nth-child(odd) {
     color: red;
+    font-size: 1vw;
   }
   .div-6-transaction p:nth-child(even) {
-    font-size: 13px;
+    font-size: 0.8vw;
   }
   .cancel-order-container {
     background-color: #f9f6f2;
@@ -223,7 +224,7 @@ td, th {
   }
   @media (max-width: 600px) {
     p{
-        font-size: 10px;
+        font-size: 1vw;
     }
     .div-5-transaction{
         display: flex;
